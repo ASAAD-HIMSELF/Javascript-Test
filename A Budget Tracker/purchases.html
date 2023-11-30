@@ -40,8 +40,7 @@
                 </div>
             </div>
         </nav>
-
-        <div id="display"></div>
+        <div class="d-flex flex-wrap gap-3" id="display"></div>
     </div>
 
 
@@ -53,12 +52,12 @@
     let items = JSON.parse(localStorage.getItem("items"))
     let total = localStorage.getItem("total")
 
-    const display = () => {
+    const show = () => {
         items.map((items, index) => {
-            display +=
+            display.innerHTML +=
             `<div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">${index + 1}</h5>
                     <p class="card-text"></p>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -74,7 +73,7 @@
             </div>`
         })
     }
-    display();
+    show();
 </script>
 
 </html>

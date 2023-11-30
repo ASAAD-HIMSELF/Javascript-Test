@@ -23,6 +23,9 @@ const addItems = () => {
   } else {
     let total = productCost.value * productQuantity.value;
 
+    userAvalableBalance.innerHTML = `${budgetedAmount}.00`;
+    userTotalExpenses.innerHTML = `${avalableBalance}.00`;
+
     budgetedAmount = budgetedAmount - total;
     avalableBalance = avalableBalance + total;
     console.log(typeof avalableBalance, budgetedAmount);
@@ -42,5 +45,6 @@ const addItems = () => {
     productQuantity.value = "";
     localStorage.setItem("items", JSON.stringify(array));
     localStorage.setItem("total", JSON.stringify(avalableBalance));
+    window.location.href = "purchases.html";
   }
 };
